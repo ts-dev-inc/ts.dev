@@ -1,0 +1,5 @@
+_site/
+_tmp/
+node_modules
+LICENSE
+style.md

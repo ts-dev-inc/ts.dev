@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  main.marketing h2 {
+    @apply text-5xl font-bold;
+  }
+  main.marketing h3 {
+    @apply text-4xl font-bold;
+  }
+  main.marketing h4 {
+    @apply text-2xl font-bold;
+  }
+  .why-us h4 {
+    height: 4.375rem;
+  }
+  main.marketing p {
+    @apply text-lg;
+  }
+  p {
+    @apply mt-2.5;
+  }
+  .cta-button {
+    @apply px-5 md:px-10 py-3 h-12 w-full md:w-auto font-bold text-gray bg-yellow hover:bg-yellow-light;
+  }
+
+  /* style guide */
+  aside {
+    @apply border-2 border-red-500;
+  }
+  aside ul, aside li {
+    @apply ml-6;
+  }
+  
+  pre .str, code .str { color: #bcf0c0; } /* string */
+  pre .kwd, code .kwd { color: #00bff9; font-style: italic; } /* keyword - dark pink */
+  pre .com, code .com { color: #999999; font-style: italic; } /* comment - gray */
+  pre .typ, code .typ { color: #f7ecb5; } /* type - light blue */
+  pre .lit, code .lit { color: #8dec95; } /* literal - blue */
+  pre .pun, code .pun { color: #fff; } /* punctuation - white */
+  pre .pln, code .pln { color: #fff; } /* plaintext - white */
+
+  pre > code {
+    background-color: #011627;
+    border-radius: 8px;
+    width: 95%;
+    margin: 1em auto;
+    padding: 1em;
+    white-space: pre-wrap;
+    display: block;
+  }
+
+  pre > code.bad {
+    background-color: #8B0026;
+  }
+}
+
+@layer base {
+  .first-letter::first-letter {
+    @apply text-yellow;
+  }
+  main.marketing > section > article {
+    @apply text-white md:max-w-large md:m-auto p-5 md:px-0 md:py-32;
+  }
+  main.marketing > section > article:not(.hero) {
+    @apply flex flex-col items-center;
+  }
+  main.marketing > section:nth-child(odd) {
+    @apply bg-gray;
+  }
+  main.marketing > section:nth-child(even) {
+    @apply bg-gray-light;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Kanit', sans-serif;
+  }
+}

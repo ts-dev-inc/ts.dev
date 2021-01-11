@@ -1,0 +1,38 @@
+{
+  "name": "ts.dev",
+  "version": "1.0.0",
+  "description": "Home page and style guide for TS.dev",
+  "main": "index.js",
+  "scripts": {
+    "clean": "del-cli ./_site",
+    "debug": "DEBUG=Eleventy:TsDevEleventyLog* eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ts-dev-inc/ts.dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ts-dev-inc/ts.dev/issues"
+  },
+  "homepage": "https://github.com/ts-dev-inc/ts.dev#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "autoprefixer": "^10.2.1",
+    "clean-css-cli": "^4.3.0",
+    "code-prettify-google": "^1.0.1",
+    "del-cli": "^3.0.1",
+    "eleventy-plugin-nesting-toc": "^1.2.0",
+    "eleventy-plugin-sass": "^1.1.1",
+    "html-minifier": "^4.0.0",
+    "jsdom": "^16.4.0",
+    "markdown-it": "^12.0.4",
+    "markdown-it-attrs": "^4.0.0",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  }
+}
