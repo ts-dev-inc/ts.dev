@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .grid.why-us img {
+    @apply mr-2.5;
+  }
+  main.marketing h2 {
+    @apply text-5xl font-bold;
+  }
+  main.marketing h3 {
+    @apply text-4xl font-bold;
+  }
+  main.marketing h4 {
+    @apply text-2xl font-bold;
+  }
+  .why-us h4 {
+    height: 4.375rem;
+  }
+  main.marketing p {
+    @apply text-lg mt-2.5;
+  }
+
+  .cta-button {
+    @apply px-5 md:px-10 py-3 h-12 font-bold text-gray bg-yellow hover:bg-yellow-light;
+  }
+}
+
+@layer base {
+  .first-letter::first-letter {
+    @apply text-yellow;
+  }
+  main.marketing > section > article {
+    @apply text-white py-32 md:max-w-large md:m-auto;
+  }
+  main.marketing > section > article:not(.hero) {
+    @apply flex flex-col items-center;
+  }
+  main.marketing > section:nth-child(odd) {
+    @apply bg-gray;
+  }
+  main.marketing > section:nth-child(even) {
+    @apply bg-gray-light;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Kanit', sans-serif;
+  }
+}

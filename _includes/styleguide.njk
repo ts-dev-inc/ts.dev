@@ -1,0 +1,16 @@
+---
+title: TS Style Guide
+---
+
+{% extends "_includes/layout.njk" %}
+
+{% block content %}
+    {% if content | toc %}
+        <aside>
+            {{ content | toc | safe }}
+        </aside>
+    {% endif %}
+    <section>
+        {{content | safe }}
+    </section>
+{% endblock %}
