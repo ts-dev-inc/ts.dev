@@ -1,7 +1,7 @@
 const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
 const markdownItAttrs = require('markdown-it-attrs');
-const pluginTOC = require('eleventy-plugin-toc');
+const pluginTOC = require('eleventy-plugin-nesting-toc');
 
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginTOC);
