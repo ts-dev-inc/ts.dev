@@ -28,6 +28,9 @@
   aside {
     @apply border-2 border-red-500;
   }
+  aside ul, aside li {
+    @apply ml-6;
+  }
 }
 
 @layer base {

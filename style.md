@@ -548,8 +548,6 @@ should use `public`, but AngularJS should use `protected`.
 > Warning: Getters and setters have to be transpiled into bloated code.
 > It is a good practice to avoid using getters and setters in general.
 
-</section>
-
 Getters and setters for class members may be used. The getter method must be a
 [pure function](https://en.wikipedia.org/wiki/Pure_function) (i.e., result is
 consistent and has no side effects). They are also useful as a means of
