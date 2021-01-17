@@ -21,7 +21,6 @@
   main.marketing p {
     @apply text-lg mt-2.5;
   }
-
   .cta-button {
     @apply px-5 md:px-10 py-3 h-12 font-bold text-gray bg-yellow hover:bg-yellow-light;
   }

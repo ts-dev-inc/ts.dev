@@ -20,6 +20,7 @@ module.exports = {
           'max-content': "repeat(3, minmax(0, max-content))",
         },
         gridTemplateColumns: {
+          'equal-2': "repeat(2, 1fr)",
           'equal-3': "repeat(3, 1fr)",
           'equal-5': "repeat(5, 1fr)",
         },
