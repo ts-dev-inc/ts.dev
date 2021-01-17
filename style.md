@@ -211,8 +211,6 @@ In very rare situations (e.g. long multiline container literals or formatting
 bugs that cause semantic issues), it can be necessary to disable formatter
 for a section. Use this only where absolutely needed.
 
-</section>
-
 ### Comments & Documentation {#comments-documentation}
 
 #### JSDoc vs comments {#jsdoc-vs-comments}
@@ -481,6 +479,8 @@ Private identifiers cause substantial emit size and
 performance regressions when down-leveled by TypeScript, and are unsupported
 before ES2015. At the same time, they do not offer substantial benefits when
 static type checking is used to enforce visibility.
+
+</section>
 
 #### Use `readonly` {#use-readonly}
 
