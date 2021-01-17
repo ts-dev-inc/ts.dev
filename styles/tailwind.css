@@ -24,6 +24,13 @@
   .cta-button {
     @apply px-5 md:px-10 py-3 h-12 font-bold text-gray bg-yellow hover:bg-yellow-light;
   }
+
+  aside {
+    @apply border-2 border-red-500;
+  }
+  aside ul, aside li {
+    @apply ml-6;
+  }
 }
 
 @layer base {
