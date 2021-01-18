@@ -409,7 +409,7 @@ See also [export visibility](#export-visibility) below.
 Constructor calls must use parentheses, even when no arguments are passed:
 
 ```ts {.bad}
-const x = new Foo();
+const x = new Foo;
 ```
 
 ```ts {.good}
