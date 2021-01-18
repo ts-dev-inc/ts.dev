@@ -64,8 +64,9 @@ function highlighter(str, language, attrs) {
     // empty string means defer to the upstream escaping code built into markdown lib.
     return "";
   }
-
-  html = prettify.prettyPrintOne(str, "ts");
+  
+  const safeStr = str.replace('<', '&lt;').replace('>', '&gt;');
+  html = prettify.prettyPrintOne(safeStr, "ts");
   // wrap with a div, so we can style code with .good and .bad
   return `<div>${html}</div>`;
 }
