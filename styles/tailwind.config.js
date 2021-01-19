@@ -17,6 +17,7 @@ module.exports = {
       },
       extend: {
         gridTemplateRows: {
+          'equal-3': "repeat(3, 1fr)",
           'max-content': "repeat(3, minmax(0, max-content))",
         },
         gridTemplateColumns: {
