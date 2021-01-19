@@ -4,10 +4,10 @@ title: TS.dev
 ---
 
 {% block content %}
-  <main class="marketing w-full">
+  <main class="marketing w-full overflow-x-hidden">
     <section>
-      <article class="hero grid grid-cols-12 grid-rows-max-content gap-y-8 auto-rows-min items-start">
-        <h1 class="col-start-1 col-span-full row-start-1 row-span-1 text-6xl font-bold leading-tight z-10">
+      <article class="hero grid md:grid-cols-12 grid-rows-max-content gap-y-8 auto-rows-min items-start">
+        <h1 class="col-start-1 col-span-full row-start-1 row-span-1 text-4xl md:text-6xl font-bold leading-tight z-10">
           <div>
             <span class="inline-block first-letter">Top</span>
             <span class="inline-block first-letter">Software</span>
@@ -15,15 +15,14 @@ title: TS.dev
           </div>
           <div>for your business needs</div>
         </h1>
-        <div class="col-start-1 col-span-6 row-start-2 z-10">
+        <div class="md:col-span-8 md:col-end-13 md:row-start-1 md:row-span-3 justify-end">
+          <img class="max-h-hero" src="/svg/tsdev-hero.svg"/>
+        </div>
+        <div class="md:col-start-1 md:col-span-6 md:row-start-2 z-10">
           <p>We improve business processes of our customers, based on a wide stack of modern technologies and solutions.</p>
           <p>Our experts help define requirements, create specifications, design and develop solutions, and then implement, test and deploy them on multiple platforms.</p>
         </div>
-        <div class="col-span-8 col-end-13 row-start-1 row-span-3 justify-end">
-          <img class="max-h-hero" src="/svg/tsdev-hero.svg"/>
-        </div>
-
-        <button class="col-start-1 col-span-2 row-end-4 row-span-1 cta-button self-end justify-self-start">
+        <button class="md:col-start-1 md:col-span-2 md:row-end-4 md:row-span-1 cta-button self-end justify-self-start">
           Let's talk
         </button>
       </article>
