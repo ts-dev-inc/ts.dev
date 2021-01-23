@@ -56,10 +56,6 @@ $transition-delay: 0.05s;
       }
     }
   }
-    &:before {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-  }
 }
 
 /* Toggle Button */
@@ -82,7 +78,7 @@ $transition-delay: 0.05s;
   }
 
   // Making the 'X' icon using `:before` and `:after` pseudo-elements
-  // Initially hidden beause of `scale(0)` transformation
+  // Initially hidden because of `scale(0)` transformation
 
   &:before, &:after {
     position: absolute;
@@ -121,11 +117,11 @@ $transition-delay: 0.05s;
   float: left;
   clear: both;
   color: transparent;
-  font-size: 14px;
+  font-size: 1.125rem;
   letter-spacing: -6.2px;
   height: 7px;
   line-height: 7px;
-  text-transform: uppercase;
+//   text-transform: uppercase;
   white-space: nowrap;
   transform: scaleY(0.2);
   transition: $transition-duration, opacity 1s;
@@ -143,12 +139,17 @@ $transition-delay: 0.05s;
 
   // Adjusting width for first line
   &:nth-child(1) {
-    letter-spacing: -8px;
+    letter-spacing: -4px;
   }
 
   // Adjusting width for second line
   &:nth-child(2) {
     letter-spacing: -7px;
+  }
+
+  // Adjusting width for second line
+  &:nth-child(3) {
+    letter-spacing: -4px;
   }
 
   // Adjusting the fourth element onwards
