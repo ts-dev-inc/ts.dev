@@ -1,21 +1,39 @@
 {% extends "_includes/default.njk" %}
 
 {% block body %}
-    <nav class="flex items-center justify-between bg-gray-light px-3 md:px-16">
-        <button class="md:hidden">
-            <img class="w-10 h-11" src="/svg/hamburger.svg" />
-        </button>
+    <nav class="grid grid-cols-equal-3 bg-gray-light px-3 md:px-16">
+        <input class="hidden" id="toggle" type="checkbox">
+
+        <label class="md:hidden toggle-container row-start-1 col-start-1" for="toggle">
+            <span class="button button-toggle"></span>
+        </label>
+
+        <!-- The Nav Menu -->
+        {% include "_includes/links.html" %}
+
+         <a href="/" class="row-start-1 col-start-2 flex justify-center items-start p-2 flex-no-shrink text-white">
+            <img src="/svg/logo.svg"/>
+        </a>
+        <a href="/#contacts" class="row-start-1 col-start-3">
+            <button class="cta-button">
+                <span class="hidden md:inline">Get in touch</span>
+                <img class="md:hidden h-6 w-5" src="/svg/mail.svg"/>
+            </button>
+        </a>
+    </nav>
+    {# <nav class="flex items-center justify-between bg-gray-light px-3 md:px-16">
+
         <a href="/" class="flex h-20 py-2.5 items-center flex-no-shrink text-white mr-6">
-            <img src="/svg/logo.svg" />
+            <img src="/svg/logo.svg"/>
         </a>
         {% include "_includes/links.html" %}
         <a href="#">
             <button class="cta-button">
                 <span class="hidden md:inline">Get in touch</span>
-                <img class="md:hidden h-6 w-5" src="/svg/mail.svg" />
+                <img class="md:hidden h-6 w-5" src="/svg/mail.svg"/>
             </button>
         </a>
-    </nav>
+    </nav> #}
 
     {% block content %}
         {{ content | safe }}
@@ -23,7 +41,7 @@
 
     <footer class="flex items-center justify-between bg-gray px-3 md:px-16">
         <a href="/" class="flex h-20 py-2.5 mr-6">
-            <img src="/svg/logo.svg" />
+            <img src="/svg/logo.svg"/>
         </a>
         <div class="flex flex-col justify-center my-10">
             {% include "_includes/links.html" %}
