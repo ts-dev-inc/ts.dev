@@ -1,7 +1,7 @@
 {% extends "_includes/default.njk" %}
 
 {% block body %}
-    <nav class="grid grid-cols-equal-3 bg-gray-light px-3 md:px-16">
+    <nav class="grid grid-cols-equal-3 bg-gray-light px-3 md:px-16 min-h-14">
         <input class="hidden" id="toggle" type="checkbox">
 
         <label class="md:hidden toggle-container row-start-1 col-start-1" for="toggle">
@@ -11,8 +11,8 @@
         <!-- The Nav Menu -->
         {% include "_includes/links.html" %}
 
-         <a href="/" class="row-start-1 col-start-2 flex justify-center items-start p-2 flex-no-shrink text-white">
-            <img src="/svg/logo.svg"/>
+         <a href="/" class="row-start-1 col-start-2 flex justify-center items-start p-2 flex-no-shrink text-white h-10">
+            <img class="h-10 block" src="/svg/logo.svg"/>
         </a>
         <a href="/#contacts" class="row-start-1 col-start-3">
             <button class="cta-button">

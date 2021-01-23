@@ -5,6 +5,9 @@ $transition-delay: 0.05s;
 /* Basic Styles */
 /* Toggle Functionality */
 
+nav {
+    min-height: 60px;
+}
 
 // Styles for the 'open' state, if the checkbox is checked
 #toggle:checked {
@@ -63,9 +66,9 @@ $transition-delay: 0.05s;
 .button-toggle {
   position: absolute;
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin: 25px;
+  width: 30px;
+  height: 30px;
+  margin: 15px;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -105,7 +108,7 @@ $transition-delay: 0.05s;
 
 .nav {
   display: inline-block;
-  margin: 25px 25px 20px;
+  margin: 20px 15px;
   pointer-events: none;
   transition: $transition-duration;
 }
@@ -139,7 +142,7 @@ $transition-delay: 0.05s;
 
   // Adjusting width for first line
   &:nth-child(1) {
-    letter-spacing: -4px;
+    letter-spacing: -5px;
   }
 
   // Adjusting width for second line
@@ -149,7 +152,7 @@ $transition-delay: 0.05s;
 
   // Adjusting width for second line
   &:nth-child(3) {
-    letter-spacing: -4px;
+    letter-spacing: -5px;
   }
 
   // Adjusting the fourth element onwards
