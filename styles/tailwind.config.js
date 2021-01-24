@@ -13,7 +13,11 @@ module.exports = {
         'large': '73.125rem',
       },
       maxHeight: {
-      'hero': "25.75rem",
+        'hero': "25.75rem",
+      },
+      minHeight: {
+        'header-mobile': "3.75rem",
+        'header': "5rem",
       },
       extend: {
         gridTemplateRows: {

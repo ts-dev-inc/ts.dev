@@ -1,18 +1,23 @@
 {% extends "_includes/default.njk" %}
 
 {% block body %}
-    <nav class="flex items-center justify-between bg-gray-light px-3 md:px-16">
-        <button class="md:hidden">
-            <img class="w-10 h-11" src="/svg/hamburger.svg" />
-        </button>
-        <a href="/" class="flex h-20 py-2.5 items-center flex-no-shrink text-white mr-6">
-            <img src="/svg/logo.svg" />
-        </a>
+    <nav class="grid grid-cols-equal-3 md:grid-cols-3 bg-gray-light px-3 md:px-16 min-h-header-mobile md:min-h-header">
+        <input class="hidden" id="toggle" type="checkbox">
+
+        <label class="md:hidden toggle-container row-start-1 col-start-1" for="toggle">
+            <span class="button button-toggle"></span>
+        </label>
+
+        <!-- The Nav Menu -->
         {% include "_includes/links.html" %}
-        <a href="#">
-            <button class="cta-button">
-                <span class="hidden md:inline">Get in touch</span>
-                <img class="md:hidden h-6 w-5" src="/svg/mail.svg" />
+
+         <a href="/" class="row-start-1 col-start-2 md:col-start-1 flex justify-center md:justify-start items-start md:self-center flex-no-shrink text-white h-12 md:h-full py-2">
+            <img class="h-12 md:h-16" src="/svg/logo.svg"/>
+        </a>
+        <a href="/#contacts" class="row-start-1 col-start-3 self-start md:self-center mt-3 md:mt-0 mr-3 md:mr-0 justify-self-end">
+            <button class="h-9 md:h-12 w-9 md:w-auto font-bold text-gray flex justify-center bg-yellow hover:bg-yellow-light">
+                <span class="hidden md:inline self-center px-10">Get in touch</span>
+                <img class="block md:hidden self-center h-6 w-5" src="/svg/mail.svg"/>
             </button>
         </a>
     </nav>
@@ -23,14 +28,17 @@
 
     <footer class="flex items-center justify-between bg-gray px-3 md:px-16">
         <a href="/" class="flex h-20 py-2.5 mr-6">
-            <img src="/svg/logo.svg" />
+            <img src="/svg/logo.svg"/>
         </a>
-        <div class="flex flex-col justify-center my-10">
+        <div class="hidden md:flex flex-col justify-center my-10">
             {% include "_includes/links.html" %}
             <span class="mt-6 text-gray-400 font-extralight text-center">
                 All Rights Reserved © 2021, TS.dev
             </span>
         </div>
+        <span class="md:hidden mt-6 text-gray-400 font-extralight text-center">
+                All Rights Reserved © 2021, TS.dev
+            </span>
         <div class="flex">
             <img src="/svg/github.svg"/>
             <img class="ml-2 md:ml-6" src="/svg/twitter.svg"/>
