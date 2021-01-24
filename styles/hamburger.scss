@@ -5,15 +5,12 @@ $transition-delay: 0.05s;
 /* Basic Styles */
 /* Toggle Functionality */
 
-nav {
-    min-height: 60px;
-}
-
 // Styles for the 'open' state, if the checkbox is checked
 #toggle:checked {
   //Any element you need to change the style if menu is open goes here, using the sibling selector (~)
   & ~ .toggle-container .button-toggle {
-    box-shadow: 0 0 0 550px rgba( 0, 0, 0, 0.1), inset 0 0 0 20px rgba( 0, 0, 0, 0.1);
+    box-shadow: 0 0 0 550px rgba(0, 0, 0, 0.1),
+      inset 0 0 0 20px rgba(0, 0, 0, 0.1);
 
     &:before {
       transform: translateY(-50%) rotate(45deg) scale(1);
@@ -32,7 +29,7 @@ nav {
 
     // Restoring nav items from 'lines' in the menu icon
     .nav-item {
-        color: white;
+      color: white;
       letter-spacing: 0;
       height: 40px;
       line-height: 40px;
@@ -40,7 +37,6 @@ nav {
       opacity: 1;
       transform: scaleY(1);
       transition: $transition-duration, opacity 0.1s;
-
 
       // Setting delays for the nav items in open transition
       @for $i from 1 through $items {
@@ -61,117 +57,125 @@ nav {
   }
 }
 
-/* Toggle Button */
+@media (max-width: 768px) {
+  /* Toggle Button */
 
-.button-toggle {
-  position: absolute;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin: 15px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  border-radius: 100%;
-  transition: $transition-duration + 0.1;
-
-  // Shadow on Hover
-  &:hover {
-   box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1), inset 0 0 0 20px rgba(0, 0, 0, 0.1);
-  }
-
-  // Making the 'X' icon using `:before` and `:after` pseudo-elements
-  // Initially hidden because of `scale(0)` transformation
-
-  &:before, &:after {
+  .button-toggle {
     position: absolute;
-    content: '';
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    border-radius: 5px;
-    transition: $transition-duration;
-  }
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: $transition-duration + 0.1;
 
-  &:before {
-    transform: translateY(-50%) rotate(45deg) scale(0);
-  }
+    // Shadow on Hover
+    &:hover {
+      box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 20px rgba(0, 0, 0, 0.1);
+    }
 
-  &:after {
-    transform: translateY(50%) rotate(-45deg) scale(0);
-  }
-}
+    // Making the 'X' icon using `:before` and `:after` pseudo-elements
+    // Initially hidden because of `scale(0)` transformation
 
-/* Menu */
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      border-radius: 5px;
+      transition: $transition-duration;
+    }
 
-.nav {
-  display: inline-block;
-  margin: 20px 15px;
-  pointer-events: none;
-  transition: $transition-duration;
-}
+    &:before {
+      transform: translateY(-50%) rotate(45deg) scale(0);
+    }
 
-// Showing nav items as lines, making up the hamburger menu icon
-.nav-item {
-  position: relative;
-  display: inline-block;
-  float: left;
-  clear: both;
-  color: transparent;
-  font-size: 1.125rem;
-  letter-spacing: -6.2px;
-  height: 7px;
-  line-height: 7px;
-//   text-transform: uppercase;
-  white-space: nowrap;
-  transform: scaleY(0.2);
-  transition: $transition-duration, opacity 1s;
-
-  //Set delays for the nav items in close transition
-  @for $i from 1 through $items {
-    &:nth-child(#{$i}) {
-      $delay: ($i - 1) * $transition-delay;
-      transition-delay: $delay;
-      &:before {
-        transition-delay: $delay;
-      }
+    &:after {
+      transform: translateY(50%) rotate(-45deg) scale(0);
     }
   }
 
-  // Adjusting width for first line
-  &:nth-child(1) {
-    letter-spacing: -5px;
-  }
+  /* Menu */
 
-  // Adjusting width for second line
-  &:nth-child(2) {
-    letter-spacing: -7px;
-  }
-
-  // Adjusting width for second line
-  &:nth-child(3) {
-    letter-spacing: -5px;
-  }
-
-  // Adjusting the fourth element onwards
-  &:nth-child(n + 4) {
-    letter-spacing: -8px;
-    margin-top: -7px;
-    opacity: 0;
-  }
-
-  //getting lines for the hamburger menu icon
-  &:before {
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    transform: translateY(-50%) scaleY(5);
+  .nav {
+    display: inline-block;
+    margin: 20px 15px;
+    pointer-events: none;
     transition: $transition-duration;
   }
+
+  // Showing nav items as lines, making up the hamburger menu icon
+  .nav-item {
+    position: relative;
+    display: inline-block;
+    float: left;
+    clear: both;
+    color: transparent;
+    font-size: 1.125rem;
+    letter-spacing: -6.2px;
+    height: 7px;
+    line-height: 7px;
+    //   text-transform: uppercase;
+    white-space: nowrap;
+    transform: scaleY(0.2);
+    transition: $transition-duration, opacity 1s;
+
+    //Set delays for the nav items in close transition
+    @for $i from 1 through $items {
+      &:nth-child(#{$i}) {
+        $delay: ($i - 1) * $transition-delay;
+        transition-delay: $delay;
+        &:before {
+          transition-delay: $delay;
+        }
+      }
+    }
+
+    // Adjusting width for first line
+    &:nth-child(1) {
+      letter-spacing: -5px;
+    }
+
+    // Adjusting width for second line
+    &:nth-child(2) {
+      letter-spacing: -7px;
+    }
+
+    // Adjusting width for second line
+    &:nth-child(3) {
+      letter-spacing: -5px;
+    }
+
+    // Adjusting the fourth element onwards
+    &:nth-child(n + 4) {
+      letter-spacing: -8px;
+      margin-top: -7px;
+      opacity: 0;
+    }
+
+    //getting lines for the hamburger menu icon
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      transform: translateY(-50%) scaleY(5);
+      transition: $transition-duration;
+    }
+  }
+}
+
+.nav-item:hover {
+  color: #fde726;
 }
