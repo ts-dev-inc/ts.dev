@@ -20,5 +20,27 @@
   </head>
   <body class="font-kanit">
     {% block body %}{% endblock %}
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBWJbtblT25j-RlETB_QHcO05qzXuZ0plc",
+        authDomain: "ts-dev-site.firebaseapp.com",
+        projectId: "ts-dev-site",
+        storageBucket: "ts-dev-site.appspot.com",
+        messagingSenderId: "969217369491",
+        appId: "1:969217369491:web:38a348f74f7e3a495df466",
+        measurementId: "G-0C6N1VMTCJ"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
