@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  body {
+    @apply bg-gray-light text-white;
+  }
+
   main.marketing h2 {
     @apply text-5xl font-bold;
   }
@@ -26,8 +30,30 @@
   }
 
   /* style guide */
-  aside {
-    @apply border-2 border-red-500;
+  toc {
+    @apply max-w-guide md:max-w-guide-md;
+  }
+  #guide-nav-button {
+    @apply font-bold text-2xl text-white;
+  }
+  #guide-nav-button svg {
+    height: 30px;
+    fill: currentColor;
+  }
+
+  #guide-nav-button.active {
+    @apply text-yellow;
+  }
+
+  #guide-nav-button ~ main > aside {
+    @apply w-0 md:w-guide-md;
+    transition: 0.5s width;
+  }
+  #guide-nav-button.active ~ main > aside {
+    @apply w-guide;
+  }
+  aside .toc {
+    @apply w-guide md:w-guide-md;
   }
   aside ul, aside li {
     @apply ml-6;
@@ -49,6 +75,7 @@
     padding: 1em;
     white-space: pre-wrap;
     display: block;
+    overflow-x: scroll;
   }
 
   pre > code.bad {

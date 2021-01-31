@@ -9,17 +9,23 @@ module.exports = {
       fontFamily: {
         kanit: ['Kanit', 'sans-serif'],
       },
-      maxWidth: {
-        'large': '73.125rem',
-      },
-      maxHeight: {
-        'hero': "25.75rem",
-      },
-      minHeight: {
-        'header-mobile': "3.75rem",
-        'header': "5rem",
-      },
       extend: {
+        width: {
+          'guide': '20rem',
+          'guide-md': '28.125rem',
+        },
+        maxWidth: {
+          'large': '73.125rem',
+          'guide': '20rem',
+          'guide-md': '28.125rem',
+        },
+        maxHeight: {
+          'hero': "25.75rem",
+        },
+        minHeight: {
+          'header-mobile': "3.75rem",
+          'header': "5rem",
+        },
         gridTemplateRows: {
           'equal-3': "repeat(3, 1fr)",
           'max-content': "repeat(3, minmax(0, max-content))",

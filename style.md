@@ -23,11 +23,8 @@ is matched by the regular expression `[$\w]+`.
 
 | Style            | Category                                           |
 | ---------------- | -------------------------------------------------- |
-| `UpperCamelCase` | class / interface / type / enum / decorator / type |
-
-: : parameters :
-| `lowerCamelCase` | variable / parameter / function / method / property / |
-: : module alias :
+| `UpperCamelCase` | class / interface / type / enum / decorator / type / parameters |
+| `lowerCamelCase` | variable / parameter / function / method / property / module alias |
 | `CONSTANT_CASE` | global constant values, including enum values |
 | `#ident` | private identifiers are never used. |
 
@@ -1717,12 +1714,9 @@ There are four variants of import statements in ES6 and TypeScript:
 | Import type | Example                | Use for            |
 | ----------- | ---------------------- | ------------------ |
 | module      | `import \* as foo from | TypeScript imports |
-
-: : '...';` : : | destructuring |`import {SomeThing} from | TypeScript imports |
-: : '...';` : : | default |`import SomeThing from | Only for other external code that |
-: : '...';` : requires them : | side-effect |`import '...';` | Only to import libraries for |
-: : : their side-effects on load (such :
-: : : as custom elements) :
+| destructuring |`import {SomeThing} from | TypeScript imports |
+| default |`import SomeThing from | Only for other external code that requires them |
+| side-effect |`import '...';` | Only to import libraries for their side-effects on load (such as custom elements) |
 
 ```ts {.good}
 // Good: choose between two options as appropriate (see below).

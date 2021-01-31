@@ -21,10 +21,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
 
   eleventyConfig.addWatchTarget("./_tmp/style.css");
+  eleventyConfig.addWatchTarget("./js/");
 
   eleventyConfig.addPassthroughCopy({ "./_tmp/style.css": "./style.css" });
   eleventyConfig.addPassthroughCopy("svg");
   eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("js");
 
   eleventyConfig.addShortcode("version", function () {
     return String(Date.now());
@@ -34,7 +36,7 @@ module.exports = function (eleventyConfig) {
     "md",
     markdownIt({
       html: true,
-      breaks: true,
+      breaks: false,
       linkify: true,
       highlight: highlighter,
     }).use(markdownItAttrs, {
