@@ -4,9 +4,11 @@ layout: styleguide.njk
 
 # TypeScript style guide
 
-This is the style guide for the TypeScript language at that was based on the one that is provided by Google.
+This is the style guide for the TypeScript language that was based on the one that is provided by Google.
 It contains both rules and best practices. Choose those
 that work best for your team.
+
+If you have a suggestion on how to improve this style guide please check the [Changing the style guide](#changes) below.
 
 This Style Guide uses [RFC 2119](http://tools.ietf.org/html/rfc2119) terminology
 when using the phrases _must_, _must not_, _should_, _should not_, and _may_.
@@ -23,11 +25,8 @@ is matched by the regular expression `[$\w]+`.
 
 | Style            | Category                                           |
 | ---------------- | -------------------------------------------------- |
-| `UpperCamelCase` | class / interface / type / enum / decorator / type |
-
-: : parameters :
-| `lowerCamelCase` | variable / parameter / function / method / property / |
-: : module alias :
+| `UpperCamelCase` | class / interface / type / enum / decorator / type / parameters |
+| `lowerCamelCase` | variable / parameter / function / method / property / module alias |
 | `CONSTANT_CASE` | global constant values, including enum values |
 | `#ident` | private identifiers are never used. |
 
@@ -1717,12 +1716,9 @@ There are four variants of import statements in ES6 and TypeScript:
 | Import type | Example                | Use for            |
 | ----------- | ---------------------- | ------------------ |
 | module      | `import \* as foo from | TypeScript imports |
-
-: : '...';` : : | destructuring |`import {SomeThing} from | TypeScript imports |
-: : '...';` : : | default |`import SomeThing from | Only for other external code that |
-: : '...';` : requires them : | side-effect |`import '...';` | Only to import libraries for |
-: : : their side-effects on load (such :
-: : : as custom elements) :
+| destructuring |`import {SomeThing} from | TypeScript imports |
+| default |`import SomeThing from | Only for other external code that requires them |
+| side-effect |`import '...';` | Only to import libraries for their side-effects on load (such as custom elements) |
 
 ```ts {.good}
 // Good: choose between two options as appropriate (see below).
@@ -2484,8 +2480,7 @@ global rules. Evaluate your style guide proposal against the following:
 
 ### Submitting Changes {#changes-discuss}
 
-Still interested? Changes to the style guide are led by the community, decided
-broadly by consensus of those interested.
+Still interested? Changes to the style guide are led by the community, finding the consensus of those interested, however the final decision is made by the maintainers of the repository.
 
 1.  Create a PR changing the style guide with your proposed language.
 1.  Send a PR for https://github.com/ts-dev-inc/ts.dev/blob/main/style.md.

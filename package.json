@@ -4,10 +4,12 @@
   "description": "Home page and style guide for TS.dev",
   "main": "index.js",
   "scripts": {
-    "clean": "del-cli ./_site",
+    "clean": "del-cli ./_site & del-cli ./_tmp & del-cli ./js",
     "debug": "DEBUG=Eleventy:TsDevEleventyLog* eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
-    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
-    "build": "ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css"
+    "start": "npm run watch:ts & eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "npm run build:ts && ELEVENTY_PRODUCTION=true eleventy && NODE_ENV=production postcss styles/tailwind.css --o _site/style.css && cleancss _site/style.css -o _site/style.css",
+    "build:ts": "tsc --outDir ./js",
+    "watch:ts": "npm run build:ts -- --watch"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,7 @@
     "markdown-it": "^12.0.4",
     "markdown-it-attrs": "^4.0.0",
     "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "typescript": "^4.1.3"
   }
 }

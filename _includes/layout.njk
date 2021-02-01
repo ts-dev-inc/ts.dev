@@ -1,3 +1,7 @@
+---
+bodyClass: marketing
+---
+
 {% extends "_includes/default.njk" %}
 
 {% block body %}
@@ -16,7 +20,7 @@
         </a>
         <a href="/#contacts" class="row-start-1 col-start-3 self-start md:self-center mt-3 md:mt-0 mr-3 md:mr-0 justify-self-end">
             <button class="h-9 md:h-12 w-9 md:w-auto font-bold text-gray flex justify-center bg-yellow hover:bg-yellow-light">
-                <span class="hidden md:inline self-center px-10">Get in touch</span>
+                <span class="hidden md:inline self-center px-10 text-base">Get in touch</span>
                 <img class="block md:hidden self-center h-6 w-5" src="/svg/mail.svg"/>
             </button>
         </a>
@@ -27,10 +31,10 @@
     {% endblock %}
 
     <footer class="flex items-center justify-between bg-gray px-3 md:px-16">
-        <a href="/" class="flex h-20 py-2.5 mr-6">
+        <a href="/" class="flex h-20 py-2.5 mr-6 w-14">
             <img src="/svg/logo.svg"/>
         </a>
-        <div class="hidden md:flex flex-col justify-center my-10">
+        <div class="hidden md:flex flex-col justify-center my-5">
             {% include "_includes/links.html" %}
             <span class="mt-6 text-gray-400 font-extralight text-center">
                 All Rights Reserved © 2021, TS.dev
@@ -40,8 +44,8 @@
                 All Rights Reserved © 2021, TS.dev
             </span>
         <div class="flex">
-            <img src="/svg/github.svg"/>
-            <img class="ml-2 md:ml-6" src="/svg/twitter.svg"/>
+            <a href="https://github.com/ts-dev-inc/ts.dev"><img src="/svg/github.svg"/></a>
+            <a href="https://twitter.com/ts_dev_inc"><img class="ml-2 md:ml-6" src="/svg/twitter.svg"/></a>
         </div>
     </footer>
 {% endblock %}

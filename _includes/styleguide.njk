@@ -1,16 +1,29 @@
 ---
 title: TS Style Guide
+bodyClass: style
 ---
 
 {% extends "_includes/layout.njk" %}
 
+{% block head %}
+    <script defer src="/js/guide-menu.js"></script>
+{% endblock %}
+
 {% block content %}
-    {% if content | toc %}
-        <aside>
-            {{ content | toc | safe }}
-        </aside>
-    {% endif %}
-    <section>
-        {{content | safe }}
-    </section>
+    <button class="bg-gray-dark sticky top-0 z-50 flex md:hidden justify-between flex-nowrap w-full h-12 items-center px-5 py-2" id="guide-nav-button" onclick="toggle(this)">
+        <span>Navigation</span>
+        {% include "svg/hamburger.svg" %}
+    </button>
+    <main class="flex flex-1 flex-nowrap overflow-hidden" onclick="closeSideNav()">
+        {% if content | toc %}
+            <aside class="flex-shrink-0 overflow-y-scroll overflow-x-hidden bg-gray-dark">
+                {{ content | toc | safe }}
+            </aside>
+        {% endif %}
+        <div class="sg-container min-w-0 overflow-y-scroll overflow-x-hidden bg-gray">
+            <article class="w-screen md:w-auto">
+                {{content | safe }}
+            </article>
+        </div>
+    </main>
 {% endblock %}
