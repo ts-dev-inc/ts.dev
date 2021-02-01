@@ -3,14 +3,25 @@ title: TS Style Guide
 ---
 
 {% extends "_includes/layout.njk" %}
+{% block head %}
+    <script defer src="/js/guide-menu.js"/>
+{% endblock %}
 
 {% block content %}
-    {% if content | toc %}
-        <aside>
-            {{ content | toc | safe }}
-        </aside>
-    {% endif %}
-    <section>
-        {{content | safe }}
-    </section>
+    <button class="bg-gray sticky top-0 z-50 flex md:hidden justify-between flex-nowrap w-full h-12 items-center px-5 py-2" id="guide-nav-button" onclick="toggle(this)">
+        <span>Navigation</span>
+        {% include "svg/hamburger.svg" %}
+    </button>
+    <main class="flex flex-nowrap overflow-x-hidden" onclick="closeSideNav()">
+        {% if content | toc %}
+            <aside class="h-screen flex-shrink-0 overflow-y-scroll bg-gray">
+                {{ content | toc | safe }}
+            </aside>
+        {% endif %}
+        <div class="min-w-0 h-screen overflow-y-scroll overflow-x-hidden bg-gray-light z-10">
+            <article class="w-screen md:w-auto">
+                {{content | safe }}
+            </article>
+        </div>
+    </main>
 {% endblock %}
