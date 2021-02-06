@@ -42,11 +42,12 @@ module.exports = {
           },
           gray: {
             light: "#333333",
-            DEFAULT: "#2B2B2B"
+            DEFAULT: "#2B2B2B",
+            dark: "#1B1B1B"
           },
           blue: {
-            light: "#2B81BA",
-            DEFAULT: "#0064A7"
+            light: "#65C1FF",
+            DEFAULT: "#2B81BA"
           }
         },
       },
