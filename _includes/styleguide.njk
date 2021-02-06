@@ -1,5 +1,6 @@
 ---
 title: TS Style Guide
+bodyClass: style
 ---
 
 {% extends "_includes/layout.njk" %}
@@ -9,17 +10,17 @@ title: TS Style Guide
 {% endblock %}
 
 {% block content %}
-    <button class="bg-gray sticky top-0 z-50 flex md:hidden justify-between flex-nowrap w-full h-12 items-center px-5 py-2" id="guide-nav-button" onclick="toggle(this)">
+    <button class="bg-gray-dark sticky top-0 z-50 flex md:hidden justify-between flex-nowrap w-full h-12 items-center px-5 py-2" id="guide-nav-button" onclick="toggle(this)">
         <span>Navigation</span>
         {% include "svg/hamburger.svg" %}
     </button>
     <main class="flex flex-nowrap overflow-x-hidden" onclick="closeSideNav()">
         {% if content | toc %}
-            <aside class="h-screen flex-shrink-0 overflow-y-scroll bg-gray">
+            <aside class="h-screen flex-shrink-0 overflow-y-scroll overflow-x-hidden bg-gray-dark">
                 {{ content | toc | safe }}
             </aside>
         {% endif %}
-        <div class="min-w-0 h-screen overflow-y-scroll overflow-x-hidden bg-gray-light z-10">
+        <div class="sg-container min-w-0 h-screen overflow-y-scroll overflow-x-hidden bg-gray">
             <article class="w-screen md:w-auto">
                 {{content | safe }}
             </article>
