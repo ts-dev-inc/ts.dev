@@ -115,7 +115,15 @@
     @apply p-5 w-guide md:w-guide-md;
   }
   aside li {
-    @apply ml-2.5 p-2.5;
+    @apply ml-2.5;
+  }
+
+  .toc a {
+    @apply p-2.5 w-full inline-block pl-6;
+  }
+
+  .toc a.active {
+    @apply bg-yellow text-gray-dark;
   }
 
   .toc > ol > li > a {
