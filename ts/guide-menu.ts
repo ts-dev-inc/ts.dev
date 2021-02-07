@@ -54,7 +54,13 @@ function loaded() {
     const link = document.createElement("a");
     link.href = "#" + header.id;
     link.classList.add("clipboard");
-    link.innerText = "📋";
+
+    const img = document.createElement('img');
+    img.style.display = "inline-block";
+    img.style.color = "white";
+    img.style.height = "24px";
+    img.src = "/svg/link.svg";
+    link.appendChild(img);
     link.addEventListener("click", (event) => {
       event.preventDefault(); // do not navigate on click.
       navigator.clipboard.writeText(link.href).then(() => {

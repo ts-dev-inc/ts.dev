@@ -27,7 +27,10 @@
   }
 
   body.style {
-    @apply text-lg md:text-xl font-normal h-screen flex flex-col;
+    @apply h-screen flex flex-col;
+  }
+  body.style main {
+    @apply text-lg md:text-xl font-normal;
   }
   body.style p {
     @apply leading-10 font-light tracking-wide;
@@ -35,7 +38,7 @@
 
   /* style guide */
   body.style h1 {
-    @apply text-3xl md:text-5xl mb-7 font-bold;
+    @apply text-3xl md:text-5xl mb-7 mt-24 font-bold;
   }
   body.style h2 {
     @apply text-2xl md:text-4xl my-5 md:mt-14 font-bold text-blue-light;
@@ -53,6 +56,15 @@
 
   .sg-container a {
     text-decoration: underline;
+  }
+  .sg-container h2 > a,
+  .sg-container h3 > a,
+  .sg-container h4 > a {
+    vertical-align: middle;
+    opacity: 0.5;
+  }
+  .sg-container a:hover {
+    opacity: 1;
   }
 
   toc {
@@ -86,7 +98,7 @@
   aside::-webkit-scrollbar-track,
   .sg-container::-webkit-scrollbar-track,
   pre > code::-webkit-scrollbar-track,
-  body.marketing::-webkit-scrollbar-track, {
+  body.marketing::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     @apply bg-transparent;
@@ -146,7 +158,7 @@
   }
 
   .zippy {
-    border-left: 4px solid #FFF385;
+    border-left: 4px solid #fff385;
     @apply bg-gray-light p-7;
   }
 
@@ -156,7 +168,6 @@
 
   .clipboard-confirm {
     @apply absolute p-3 bg-gray-dark rounded-md -top-10 -left-7 opacity-60;
-    
   }
 
   table {
@@ -166,8 +177,9 @@
   th {
     @apply bg-gray-light;
   }
-  td, th {
-    outline: 1px solid #FFF385;
+  td,
+  th {
+    outline: 1px solid #fff385;
     @apply p-4;
   }
 
