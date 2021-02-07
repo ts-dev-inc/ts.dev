@@ -14,13 +14,13 @@ bodyClass: style
         <span>Navigation</span>
         {% include "svg/hamburger.svg" %}
     </button>
-    <main class="flex flex-nowrap overflow-x-hidden" onclick="closeSideNav()">
+    <main class="flex flex-1 flex-nowrap overflow-hidden" onclick="closeSideNav()">
         {% if content | toc %}
-            <aside class="h-screen flex-shrink-0 overflow-y-scroll overflow-x-hidden bg-gray-dark">
+            <aside class="flex-shrink-0 overflow-y-scroll overflow-x-hidden bg-gray-dark">
                 {{ content | toc | safe }}
             </aside>
         {% endif %}
-        <div class="sg-container min-w-0 h-screen overflow-y-scroll overflow-x-hidden bg-gray">
+        <div class="sg-container min-w-0 overflow-y-scroll overflow-x-hidden bg-gray">
             <article class="w-screen md:w-auto">
                 {{content | safe }}
             </article>

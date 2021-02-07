@@ -27,27 +27,32 @@
   }
 
   body.style {
-    @apply text-lg md:text-xl font-normal;
+    @apply text-lg md:text-xl font-normal h-screen flex flex-col;
   }
   body.style p {
     @apply leading-10 font-light tracking-wide;
   }
+
   /* style guide */
   body.style h1 {
     @apply text-3xl md:text-5xl mb-7 font-bold;
   }
   body.style h2 {
-    @apply text-2xl md:text-4xl my-5 font-bold text-blue-light;
+    @apply text-2xl md:text-4xl my-5 md:mt-14 font-bold text-blue-light;
   }
   body.style h3 {
-    @apply text-xl md:text-3xl my-4 font-bold;
+    @apply text-xl md:text-3xl my-4 md:mt-11 font-bold;
   }
   body.style h4 {
-    @apply text-lg md:text-2xl my-3 font-bold;
+    @apply text-lg md:text-2xl my-3 md:mt-10 font-bold;
   }
 
   .sg-container > article {
     @apply p-7;
+  }
+
+  .sg-container a {
+    text-decoration: underline;
   }
 
   toc {
@@ -57,6 +62,10 @@
   #guide-nav-button {
     @apply font-bold text-2xl text-white;
   }
+  #guide-nav-button:focus {
+    @apply outline-none;
+  }
+
   #guide-nav-button svg {
     height: 30px;
     fill: currentColor;
@@ -76,27 +85,30 @@
 
   aside::-webkit-scrollbar-track,
   .sg-container::-webkit-scrollbar-track,
-  pre > code::-webkit-scrollbar-track {
+  pre > code::-webkit-scrollbar-track,
+  body.marketing::-webkit-scrollbar-track, {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     @apply bg-transparent;
   }
   aside::-webkit-scrollbar,
   .sg-container::-webkit-scrollbar,
-  pre > code::-webkit-scrollbar {
+  pre > code::-webkit-scrollbar,
+  body.marketing::-webkit-scrollbar {
     width: 6px;
     @apply bg-transparent;
   }
-  aside::-webkit-scrollbar-thumb {
+  aside::-webkit-scrollbar-thumb,
+  body.marketing::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    @apply bg-yellow-light;
+    @apply bg-blue-light;
   }
   .sg-container::-webkit-scrollbar-thumb,
   pre > code::-webkit-scrollbar {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    @apply bg-blue-light;
+    @apply bg-yellow-light;
   }
   aside .toc {
     letter-spacing: 0.05em;
@@ -117,6 +129,44 @@
     @apply font-semibold text-base;
   }
 
+  .sg-container ul {
+    list-style-type: disc;
+    @apply ml-3 pl-7;
+  }
+  .sg-container li {
+    @apply leading-10 tracking-wide;
+  }
+
+  .zippy {
+    border-left: 4px solid #FFF385;
+    @apply bg-gray-light p-7;
+  }
+
+  .clipboard {
+    @apply text-lg ml-3 relative;
+  }
+
+  .clipboard-confirm {
+    @apply absolute p-3 bg-gray-dark rounded-md -top-10 -left-7 opacity-60;
+    
+  }
+
+  table {
+    width: 95%;
+    @apply mx-auto my-6;
+  }
+  th {
+    @apply bg-gray-light;
+  }
+  td, th {
+    outline: 1px solid #FFF385;
+    @apply p-4;
+  }
+
+  code {
+    background-color: #243949;
+    @apply rounded px-2;
+  }
   pre .str,
   code .str {
     color: #bcf0c0;
@@ -160,7 +210,7 @@
   }
 
   pre > code.bad {
-    background-color: #8b0026;
+    background-color: #660606;
   }
 }
 
