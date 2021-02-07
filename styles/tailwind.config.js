@@ -2,7 +2,7 @@ module.exports = {
     purge: {
       content: ["_site/**/*.html"],
       options: {
-        safelist: ['active', 'clipboard'],
+        safelist: ['active', 'clipboard', 'clipboard-confirm'],
       },
     },
     theme: {
