@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Home page and style guide for TS.dev",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "clean": "del-cli ./_site & del-cli ./_tmp & del-cli ./js",
     "debug": "DEBUG=Eleventy:TsDevEleventyLog* eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
     "start": "npm run watch:ts & eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
