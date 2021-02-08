@@ -8,7 +8,7 @@ bodyClass: marketing
     <nav class="grid grid-cols-equal-3 md:grid-cols-3 bg-gray-light px-3 md:px-16 min-h-header-mobile md:min-h-header">
         <input class="hidden" id="toggle" type="checkbox">
 
-        <label class="md:hidden toggle-container row-start-1 col-start-1" for="toggle">
+        <label tabindex=1 role="navigation" aria-label="Main navigation menu" class="md:hidden toggle-container row-start-1 col-start-1" for="toggle">
             <span class="button button-toggle"></span>
         </label>
 
@@ -16,12 +16,12 @@ bodyClass: marketing
         {% include "_includes/links.html" %}
 
          <a href="/" class="row-start-1 col-start-2 md:col-start-1 flex justify-center md:justify-start items-start md:self-center flex-no-shrink text-white h-12 md:h-full py-2">
-            <img class="h-12 md:h-16" src="/svg/logo.svg"/>
+            <img alt="TS.dev logo" class="h-12 md:h-16" src="/svg/logo.svg"/>
         </a>
         <a href="/#contacts" class="row-start-1 col-start-3 self-start md:self-center mt-3 md:mt-0 mr-3 md:mr-0 justify-self-end">
-            <button class="h-9 md:h-12 w-9 md:w-auto font-bold text-gray flex justify-center bg-yellow hover:bg-yellow-light">
+            <button aria-label="Get in touch with us" class="h-9 md:h-12 w-9 md:w-auto font-bold text-gray flex justify-center bg-yellow hover:bg-yellow-light">
                 <span class="hidden md:inline self-center px-10 text-base">Get in touch</span>
-                <img class="block md:hidden self-center h-6 w-5" src="/svg/mail.svg"/>
+                <img alt="contact" class="block md:hidden self-center h-6 w-5" src="/svg/mail.svg"/>
             </button>
         </a>
     </nav>
@@ -32,7 +32,7 @@ bodyClass: marketing
 
     <footer class="flex items-center justify-between bg-gray px-3 md:px-16">
         <a href="/" class="flex h-20 py-2.5 mr-6 w-14">
-            <img src="/svg/logo.svg"/>
+            <img alt="TS.dev logo" src="/svg/logo.svg"/>
         </a>
         <div class="hidden md:flex flex-col justify-center my-5">
             {% include "_includes/links.html" %}
@@ -44,8 +44,8 @@ bodyClass: marketing
                 All Rights Reserved © 2021, TS.dev
             </span>
         <div class="flex">
-            <a href="https://github.com/ts-dev-inc/ts.dev"><img src="/svg/github.svg"/></a>
-            <a href="https://twitter.com/ts_dev_inc"><img class="ml-2 md:ml-6" src="/svg/twitter.svg"/></a>
+            <a href="https://github.com/ts-dev-inc/ts.dev"><img alt="GitHub logo" src="/svg/github.svg"/></a>
+            <a href="https://twitter.com/ts_dev_inc"><img alt="Twitter logo" class="ml-2 md:ml-6" src="/svg/twitter.svg"/></a>
         </div>
     </footer>
 {% endblock %}

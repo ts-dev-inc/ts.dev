@@ -60,6 +60,7 @@ function loaded() {
     img.style.color = "white";
     img.style.height = "24px";
     img.src = "/svg/link.svg";
+    img.alt = "copy link to the clipboard";
     link.appendChild(img);
     link.addEventListener("click", (event) => {
       event.preventDefault(); // do not navigate on click.
