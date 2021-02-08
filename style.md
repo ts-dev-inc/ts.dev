@@ -2487,4 +2487,5 @@ Still interested? Changes to the style guide are led by the community, finding t
     - If there have been previous discussions of the issue here, include links to those, summarize what they said, and
       describe why it's worth revisiting.
     - Ideally, that discussion will include samples.
+1.  A preview URL is generated for PR. Make sure that the Style Guide still looks fine.
 1.  When it seems consensus is reached, it will be approved and become part of the guide after submitting.
