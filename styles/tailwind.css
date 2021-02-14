@@ -80,13 +80,13 @@
   }
 
   main.marketing h2 {
-    @apply text-5xl font-bold;
+    @apply text-4xl md:text-5xl font-bold text-center md:text-left;
   }
   main.marketing h3 {
-    @apply text-4xl font-bold;
+    @apply text-3xl md:text-4xl font-bold text-center md:text-left;
   }
   main.marketing h4 {
-    @apply text-2xl font-bold;
+    @apply text-2xl font-bold text-center md:text-left;
   }
   .why-us h4 {
     height: 4.375rem;
