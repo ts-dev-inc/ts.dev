@@ -1395,8 +1395,8 @@ symmetry with class declarations:
 
 ```ts {.bad}
 interface Foo {
-  memberA: string;
-  memberB: number;
+  memberA: string,
+  memberB: number,
 }
 ```
 
