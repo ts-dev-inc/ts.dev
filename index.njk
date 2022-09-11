@@ -21,9 +21,9 @@ title: TS.dev
           <p>We improve business processes for you as a customer based on a wide stack of modern technologies and solutions.</p>
           <p>Our experts help define requirements, create specifications, design and develop solutions, and then implement, test and deploy them on multiple platforms.</p>
         </div>
-        <button class="md:col-start-1 md:col-span-2 md:row-end-4 md:row-span-1 cta-button self-end justify-self-start">
-          Let's talk
-        </button>
+        <a href="/#contacts" class="md:col-start-1 md:col-span-2 md:row-end-4 md:row-span-1 cta-button self-end justify-self-start">
+          <button>Let's talk</button>
+        </a>
       </article>
     </section>
     <section>
@@ -161,7 +161,7 @@ title: TS.dev
       <article class="flex flex-col justify-center">
         <h2 class="text-yellow mb-8">Ready to work together?</h2>
         <p class="my-12">Let's discuss your business requirements and we will help you bring them to life.</p>
-        <button class="cta-button">Let's connect</button>
+        <a href="/#contacts"><button class="cta-button">Let's connect</button></a>
       </section>
 
       <section>
@@ -195,13 +195,13 @@ title: TS.dev
               <div class="text-lg">hello@ts.dev</div>
             </div>
 
-            <form class="flex flex-col" action="mailto:info@ts.dev" method="GET">
+            <form class="flex flex-col" onsubmit="event.preventDefault(); import('/js/form.js').then(m => m.mailTsDev(event));">
               <label for="name" class="text-yellow">Name</label>
-              <input type="text" id="name" name="subject" placeholder="Enter your name" class="bg-gray-light border-gray-400 border p-2"/>
+              <input type="text" id="name" name="subject" required placeholder="Enter your name" class="bg-gray-light border-gray-400 border p-2"/>
               <label for="email" class="text-yellow mt-4">Email</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" class="bg-gray-light border-gray-400 border p-2"/>
+              <input type="email" id="email" name="email" required placeholder="Enter your email" class="bg-gray-light border-gray-400 border p-2"/>
               <label for="message" class="text-yellow mt-4">Message</label>
-              <textarea type="text" id="message" name="body" placeholder="Type your message" class="bg-gray-light border-gray-400 border p-2"></textarea>
+              <textarea type="text" id="message" name="body" required placeholder="Type your message" class="bg-gray-light border-gray-400 border p-2"></textarea>
               <button type="submit" class="cta-button self-start mt-4"/>Send</button>
           </form>
         </div>
