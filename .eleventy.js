@@ -4,7 +4,7 @@ const markdownItAttrs = require("markdown-it-attrs");
 const pluginTOC = require("eleventy-plugin-nesting-toc");
 const debug = require("debug")("Eleventy:TsDevEleventyLog");
 const jsdom = require("jsdom");
-const pluginSass = require("eleventy-plugin-sass");
+const sass = require("sass");
 
 // code-prettify-google is typically ran in the DOM env, so we need to
 // create a virtual DOM for it.
@@ -16,7 +16,22 @@ const prettify = require("code-prettify-google/src/node_prettify");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginTOC);
-  eleventyConfig.addPlugin(pluginSass);
+  eleventyConfig.addTemplateFormats("scss");
+
+  // Creates the extension for use
+  eleventyConfig.addExtension("scss", {
+    outputFileExtension: "css", // optional, default: "html"
+
+    // `compile` is called once per .scss file in the input directory
+    compile: async function(inputContent) {
+      let result = sass.compileString(inputContent);
+
+      // This is the render function, `data` is the full data cascade
+      return async (data) => {
+        return result.css;
+      };
+    }
+  });
 
   eleventyConfig.setUseGitIgnore(false);
 
