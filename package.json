@@ -29,7 +29,7 @@
     "code-prettify-google": "^1.0.1",
     "del-cli": "^3.0.1",
     "eleventy-plugin-nesting-toc": "^1.2.0",
-    "eleventy-plugin-sass": "^1.1.1",
+    "eleventy-plugin-sass": "^1.2.0",
     "firebase": "^9.9.4",
     "html-minifier": "^4.0.0",
     "jsdom": "^16.4.0",
