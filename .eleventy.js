@@ -4,7 +4,6 @@ const markdownItAttrs = require("markdown-it-attrs");
 const pluginTOC = require("eleventy-plugin-nesting-toc");
 const debug = require("debug")("Eleventy:TsDevEleventyLog");
 const jsdom = require("jsdom");
-// const pluginSass = require("eleventy-plugin-sass");
 const sass = require("sass");
 
 // code-prettify-google is typically ran in the DOM env, so we need to
@@ -17,7 +16,6 @@ const prettify = require("code-prettify-google/src/node_prettify");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginTOC);
-  // eleventyConfig.addPlugin(pluginSass);
   eleventyConfig.addTemplateFormats("scss");
 
   // Creates the extension for use

@@ -25,11 +25,11 @@ export function mailTsDev(e: SubmitEvent) {
    }).then(
     () => {
         const buttonElement = (e.target as any)[3];
-        buttonElement.classList.toggle('sent');
+        buttonElement.classList.toggle('cta-button-sent');
         buttonElement.textContent = '✔️ Sent';
         (e.target as HTMLFormElement).reset();
         setTimeout(() => {
-            buttonElement.classList.toggle('sent');
+            buttonElement.classList.toggle('cta-button-sent');
             buttonElement.textContent = 'Send';
         }, 3000);
     }
